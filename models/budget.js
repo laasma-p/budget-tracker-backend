@@ -11,14 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'userId' });
-      this.belongsTo(models.Category, { foreignKey: 'categoryId' });
     }
   }
   Budget.init({
     amount: DataTypes.DECIMAL,
     weekStartDate: DataTypes.DATE,
-    userId: DataTypes.INTEGER,
-    categoryId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Budget',
